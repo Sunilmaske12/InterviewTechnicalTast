@@ -1,0 +1,195 @@
+/* common css */
+*{
+    margin: 0;
+    padding: 0;           
+}
+body{
+    background-color: #f7f1f1df;
+    background-repeat: no-repeat;
+   min-height: 100vh;
+   
+}
+
+/* header */
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+   align-items: center;
+   padding: 10px 30px;
+    height: 30px;
+    width: calc(100% - 60px);
+}
+header ul{
+    display: flex;
+   gap: 3rem;
+   list-style: none;
+   margin-right: 10px;
+}
+header ul a{
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    padding: .4rem 1rem;
+}
+.emp-name{
+    font-weight: 300;
+}
+.emp-name span{
+    text-transform: capitalize;
+}
+header ul a:hover{
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 7px;
+}
+
+.all-emp{
+width: 80%;
+margin: 2rem auto;
+}  
+table{
+    box-shadow: 5px 5px 10px 5px rgb(154, 152, 152);
+border-radius: 10px;
+background-color: white;
+width: 100%;
+font-size: larger;
+font-weight: 300;
+border-collapse: collapse;
+
+}
+th{
+border-bottom: 1px solid black;
+padding: 15px;
+
+}
+
+td{
+text-align: center;
+padding: 15px;
+border-bottom: 1.4px ridge ;
+font-size: 0.7rem;
+
+}
+td button{
+font-size: 12px;
+
+}
+
+/* login + register */
+.heading{
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+form{
+    padding:0rem 2rem;
+}
+form div{
+    margin: 1.5rem 0;
+}
+form .register-field{
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+
+label{
+    width: 160px;
+    font-weight: 700;
+    font-size: large;
+ }
+textarea, .field{
+     padding: 0.5rem 0.8rem;
+     width: 400px;
+     border-radius: 5px;
+     border: 1px solid rgba(0, 0, 0, 0.552);
+     font-size: small;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+   }
+   button{
+    padding:.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+   }
+   .submit-btn{
+    background-color: red;
+    color: white;
+   }
+   .reset-btn{
+    background-color: rgb(216, 183, 20);
+    color: white;
+   }
+
+   /* login */
+   .login-form-section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+   }
+   .login-form label{
+    width: 100px;
+   }
+   .login-form .field{
+    padding: 1rem;
+    font-size: medium;
+    margin: 1em 0;
+    
+   }
+   .login-container{
+    box-shadow: 5px 5px 10px 5px rgb(154, 152, 152);
+    border-radius: 7px;
+    background-color: white;
+    overflow: hidden;
+    
+   }
+   
+   .login-error{
+	   color: red;
+   }
+   .login-emp{
+	   border: 1px solid white;
+	   padding: .3rem 1rem ;
+	   border-radius: 8px;
+   }
+
+   /* register */
+   
+   .male, .female{
+    margin-left: 1rem;
+    margin-right: 2px;
+   }
+   
+   .register-container{
+    box-shadow: 5px 5px 10px 5px rgb(154, 152, 152);
+    border-radius: 7px;
+    margin: 1rem auto;
+    background-color: white;
+    width: 700px;
+    overflow: hidden;
+   }
+   
+   form p{
+	  display: block;
+	  text-align: center;
+	  color: red;
+	  font-size: small;
+	  margin: 0;
+   }
+   
+ .register-success{
+	 color: green;
+ }
