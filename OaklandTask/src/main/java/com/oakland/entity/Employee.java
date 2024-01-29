@@ -1,7 +1,6 @@
 package com.oakland.entity;
 
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,8 +12,6 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-
-
 @Entity
 public class Employee {
 	
@@ -25,9 +22,6 @@ public class Employee {
 	@NotBlank(message = "name should not be null")
 	private String name;
 	
-	/*
-	 * @DateTimeFormat(pattern = "yyyy-MM-dd") private LocalDate dateOfBirth;
-	 */
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "Date of Birth cannot be null")
     private Date dateOfBirth;
@@ -69,16 +63,6 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	/*
-	 * public String getDateOfBirth() { DateTimeFormatter formatter =
-	 * DateTimeFormatter.ofPattern("dd-MM-yyyy"); String formattedDate=null; //
-	 * Format the LocalDate using the formatter if(dateOfBirth!=null) {
-	 * formattedDate = dateOfBirth.format(formatter); } return formattedDate; }
-	 * 
-	 * public void setDateOfBirth(LocalDate dateOfBirth) { this.dateOfBirth =
-	 * dateOfBirth; }
-	 */
 
 	public String getAddress() {
 		return address;

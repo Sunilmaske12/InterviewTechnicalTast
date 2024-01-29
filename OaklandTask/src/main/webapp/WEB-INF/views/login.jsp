@@ -18,9 +18,8 @@
     </header>
 
    <section class="login-form-section">
-    <div class="login-container">
-       
-        <h1 class="heading">Employee Login</h1>
+    <div class="login-container">       
+        <h1 class="heading">Employee | Login Page</h1>
         <form class="login-form"  action="loginEmployee" method="post">
            <div class="login-id">
                 <label for="">Login Id :</label>
@@ -29,12 +28,12 @@
            <div class="password">
                 <label for="">Password :</label>
                 <input name="password" class="field" type="password" placeholder="Enter password">
-           </div>
-           
+           </div>           
            <%
            		String loginEmployee = (String)request.getAttribute("loginEmployee");
            		String registerSuccess = (String)request.getAttribute("registerSuccess");
            %>
+           
            <div>
            		<%if(loginEmployee!=null){ %>
            			<h4 class="login-error"><%=loginEmployee %></h4>

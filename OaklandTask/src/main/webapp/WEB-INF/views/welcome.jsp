@@ -69,13 +69,8 @@
 	                    <td><%=employee.getCity()%></td>  
 	                </tr>
             		
-            <%		
-            	}
-            
-            %>
-         
-             
-            </tbody>
+            <%}%>
+           </tbody>
         </table>
     </div>
 </body>

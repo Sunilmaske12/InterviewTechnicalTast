@@ -3,6 +3,7 @@ package com.oakland.dao;
 import java.util.List;
 import javax.transaction.Transactional;
 
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
@@ -28,20 +29,18 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		return allEmployees;
 	}
 
-	
+	@Override
 	public Employee loginEmployee(String loginId, final String password) {
 		
-        final String query = "from Employee where loginId=:loginId and password=:password";
+        final String query = "from Employee where loginId=CAST(:loginId as binary) AND password=CAST(:password AS binary)";
         
-        Employee employee = (Employee)this.hibernateTemplate.execute(s->{
-        	org.hibernate.query.Query<Employee> q=s.createQuery(query, Employee.class);
+        List<Employee> employee = this.hibernateTemplate.execute(s->{
+        	Query<Employee> q=s.createQuery(query, Employee.class);
         	q.setParameter("loginId", loginId);
         	q.setParameter("password", password);
-        	return q.uniqueResult();
+        	return q.list();
         });
-        
-        
-        return employee;
+         return employee.isEmpty() ? null : employee.get(0);
 	}
 
 }

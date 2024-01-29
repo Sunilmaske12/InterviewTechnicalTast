@@ -1,5 +1,6 @@
 package com.oakland.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return allEmployees;
 	}
 
+	@Override
+	public List<Employee> getALLEmployeesExceptCurrent(Employee employee) {
+		List<Employee> allEmployees = this.employeeDao.getAllEmployee();
+			
+		 List<Employee> newEmployees = new ArrayList<>();
+		 for(Employee emp:allEmployees) {
+			 if(employee.getId() != emp.getId()) {
+				 newEmployees.add(emp);
+			 }
+		 }
+		return newEmployees;
+	}
+
+	
 	@Override
 	public Employee loginEmployee(String loginId, String password) {
 		Employee employee = this.employeeDao.loginEmployee(loginId, password);

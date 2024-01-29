@@ -10,6 +10,8 @@ public interface EmployeeService {
 	
 	List<Employee> getALLEmployees();
 
+	List<Employee> getALLEmployeesExceptCurrent(Employee employee);
+
 	Employee loginEmployee(String loginId, String password);
 
 }

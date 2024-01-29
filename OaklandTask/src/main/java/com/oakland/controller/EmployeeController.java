@@ -1,9 +1,6 @@
 package com.oakland.controller;
-
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,8 +23,7 @@ public class EmployeeController {
 	public String loginPage(){
 		return "login";
 	}
-	
-	
+		
 	 @GetMapping("/welcome") 
 	 public String getHome(Model model) { 
 		 List<Employee> allEmployees = this.employeeService.getALLEmployees();
@@ -53,21 +49,17 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/loginEmployee")
-	public String loginEmployee(@RequestParam("password") String password, @RequestParam("loginId") String loginId, Model model) {
-		
+	public String loginEmployee(@RequestParam("password") String password, 
+			@RequestParam("loginId") String loginId, Model model) {		
 		Employee employee= this.employeeService.loginEmployee(loginId, password);
 		if(employee!=null) {
 			model.addAttribute("loginEmployeeName", employee.getName());
-			 List<Employee> allEmployees = this.employeeService.getALLEmployees();
+			 List<Employee> allEmployees = this.employeeService.getALLEmployeesExceptCurrent(employee);
 			 model.addAttribute("allEmployees", allEmployees); 
 			return "welcome";
 		}
 		model.addAttribute("loginEmployee", "Employee not found !");
 		return "login";
 	}
-	
-	
-	
-	
-
 }
+
